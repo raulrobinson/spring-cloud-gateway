@@ -1,0 +1,30 @@
+# -------------------------------------
+#   General Application configuration
+# -------------------------------------
+server:
+  port: 8086
+springdoc:
+  properties:
+    host: localhost
+    port: 8086
+spring:
+  security:
+    user:
+      password: 'R@5y5b0X'
+
+  # ------------
+  #   Database
+  # ------------
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+    defer-datasource-initialization: true
+    open-in-view: false
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:db/data.sql

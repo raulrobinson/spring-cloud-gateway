@@ -1,0 +1,24 @@
+# -------------------------------------
+#   General Application configuration
+# -------------------------------------
+server:
+  port: 8080
+springdoc:
+  properties:
+    host: localhost
+    port: 8080
+spring:
+  security:
+    user:
+      password: 'R@5y5b0X'
+
+  # ------------
+  #   Database
+  # ------------
+  datasource:
+    url: ${DB_HOST}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none

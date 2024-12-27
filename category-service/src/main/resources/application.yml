@@ -1,0 +1,46 @@
+# General Application configuration
+spring:
+  application:
+    name: @project.name@
+info:
+  project-version: @project.version@
+  build-timestamp: ${maven.build.timestamp}
+controller:
+  properties:
+    base-path: /@project.name@/v1
+
+# Swagger
+springdoc:
+  swagger-ui:
+    use-root-path: true
+  properties:
+    developer-mail: 'rasysbox@hotmail.com'
+    developer-name: 'Raul Bolivar Navas'
+    organization-url: 'https://www.rasysbox.com'
+    project-licence-link: 'https://www.rasysbox.com/License'
+    project-licence-msg: 'License'
+    project-name: @project.name@
+    project-short-description: @project.description@
+    project-tos-link: 'https://www.rasysbox.com/TermsOfService'
+    project-tos-msg: 'Terms Of Service'
+
+# Metrics
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      status:
+        http-mapping:
+          down: 500
+      show-details: always
+  http exchanges:
+    recording:
+      include: request-headers,time-taken,session-id
+
+logging:
+  level:
+    org.springframework.vault: DEBUG
+    org.springframework.cloud.vault: DEBUG

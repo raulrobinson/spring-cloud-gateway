@@ -1,0 +1,12 @@
+server:
+  port: 8085
+
+# Database
+spring:
+  datasource:
+    url: ${DB_HOST}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none

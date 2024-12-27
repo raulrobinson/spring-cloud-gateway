@@ -1,0 +1,36 @@
+# -------------------------------------
+#   General Application configuration
+# -------------------------------------
+server:
+  port: 8080
+springdoc:
+  properties:
+    host: localhost
+    port: 8080
+spring:
+  security:
+    user:
+      password: 'R@5y5b0X'
+
+  # ------------
+  #   Database
+  # ------------
+  sql:
+    init:
+      mode: always
+      platform: postgres
+      schema-locations: classpath:db/data.sql
+  datasource:
+    url: jdbc:postgresql://localhost:25432/postgres
+    username: ${DB_USERNAME_FILE}
+    password: ${DB_PASSWORD_FILE}
+    hikari:
+      maximum-pool-size: 1
+      minimum-idle: 1
+      maxLifetime: 600000
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    defer-datasource-initialization: true
+    open-in-view: false
